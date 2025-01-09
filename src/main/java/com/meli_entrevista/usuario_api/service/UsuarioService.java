@@ -25,4 +25,13 @@ public class UsuarioService {
         }
         return usuario;
     }
+
+    public Usuario update(Integer id, Double saldoAtualizado) {
+        Usuario usuarioExistente = usuarioRepository.getUsuarioById(id);
+        if (Objects.isNull(usuarioExistente)) {
+            throw new UsuarioNaoEncontradoException();
+        }
+        usuarioExistente.setSaldo(saldoAtualizado);
+        return usuarioRepository.save(usuarioExistente);
+    }
 }
