@@ -1,4 +1,4 @@
-package com.meli_entrevista.usuario_api.factory;
+package com.entrevista.usuario_api.factory;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;

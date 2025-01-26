@@ -1,4 +1,4 @@
-package com.meli_entrevista.usuario_api;
+package com.entrevista.usuario_api;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class UsuarioApiApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(UsuarioApiApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(UsuarioApiApplication.class, args);
+    }
 
 }

@@ -1,8 +1,10 @@
-package com.meli_entrevista.usuario_api.repository;
+package com.entrevista.usuario_api.repository;
 
-import com.meli_entrevista.usuario_api.model.Usuario;
+import com.entrevista.usuario_api.entities.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Usuario getUsuarioById(Integer id);
 }
