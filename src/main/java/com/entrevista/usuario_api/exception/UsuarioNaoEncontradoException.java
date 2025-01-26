@@ -1,4 +1,4 @@
-package com.meli_entrevista.usuario_api.exception;
+package com.entrevista.usuario_api.exception;
 
 public class UsuarioNaoEncontradoException extends RuntimeException {
 

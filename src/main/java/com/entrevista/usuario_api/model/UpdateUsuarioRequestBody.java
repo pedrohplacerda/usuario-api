@@ -1,4 +1,4 @@
-package com.meli_entrevista.usuario_api.model;
+package com.entrevista.usuario_api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.annotation.Nullable;
