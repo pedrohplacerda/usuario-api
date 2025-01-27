@@ -1,5 +1,6 @@
 package com.entrevista.usuario_api.handler;
 
+import com.entrevista.usuario_api.exception.EmailEmUsoException;
 import com.entrevista.usuario_api.exception.UsuarioNaoEncontradoException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,11 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler(UsuarioNaoEncontradoException.class)
     public ResponseEntity<String> usuarioNaoEncontradoHandler(UsuarioNaoEncontradoException exception) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Usuário não encontrado.");
+    }
+
+    @ExceptionHandler(EmailEmUsoException.class)
+    public ResponseEntity<String> emailEmUsoExceptionHandler(EmailEmUsoException exception) {
+        return ResponseEntity.status(HttpStatus.PRECONDITION_FAILED).body("Email em uso.");
     }
 
 }

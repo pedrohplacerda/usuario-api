@@ -1,18 +1,43 @@
 package com.entrevista.usuario_api.dto;
 
+import com.entrevista.usuario_api.enums.UserRole;
+
 public class UsuarioDTO {
     private Integer id;
     private String nome;
     private String email;
     private String cpfCnpj;
     private Double saldo;
+    private String senha;
+    private UserRole role;
 
-    public UsuarioDTO(Integer id, String nome, String email, String cpfCnpj, Double saldo) {
+    public UsuarioDTO(Integer id, String nome, String email, String cpfCnpj, Double saldo, String senha, UserRole role) {
+        this.cpfCnpj = cpfCnpj;
         this.id = id;
         this.nome = nome;
         this.email = email;
-        this.cpfCnpj = cpfCnpj;
         this.saldo = saldo;
+        this.senha = senha;
+        this.role = role;
+    }
+
+    public UsuarioDTO() {
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
     public Integer getId() {
@@ -53,8 +78,5 @@ public class UsuarioDTO {
 
     public void setSaldo(Double saldo) {
         this.saldo = saldo;
-    }
-
-    public UsuarioDTO() {
     }
 }

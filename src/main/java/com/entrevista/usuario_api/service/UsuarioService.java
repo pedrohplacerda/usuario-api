@@ -2,6 +2,7 @@ package com.entrevista.usuario_api.service;
 
 import com.entrevista.usuario_api.dto.UsuarioDTO;
 import com.entrevista.usuario_api.entities.Usuario;
+import com.entrevista.usuario_api.exception.EmailEmUsoException;
 import com.entrevista.usuario_api.exception.UsuarioNaoEncontradoException;
 import com.entrevista.usuario_api.mapper.UsuarioMapper;
 import com.entrevista.usuario_api.repository.UsuarioRepository;
@@ -19,6 +20,9 @@ public class UsuarioService {
     }
 
     public Usuario save(UsuarioDTO usuario) {
+        if (Objects.nonNull(usuarioRepository.getUsuarioByEmail(usuario.getEmail()))) {
+            throw new EmailEmUsoException();
+        }
         return usuarioRepository.save(UsuarioMapper.INSTANCE.toUsuario(usuario));
     }
 

@@ -1,5 +1,6 @@
 package com.entrevista.usuario_api.entities;
 
+import com.entrevista.usuario_api.enums.UserRole;
 import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 
@@ -25,15 +26,23 @@ public class Usuario {
     @Column(name = "saldo")
     private Double saldo;
 
+    @Column(name = "senha")
+    private String senha;
+
+    @Column(name = "role")
+    private UserRole role;
+
     public Usuario() {
     }
 
-    public Usuario(Integer id, String nome, String email, String cpfCnpj, Double saldo) {
+    public Usuario(Integer id, String nome, String email, String cpfCnpj, Double saldo, String senha, UserRole role) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpfCnpj = cpfCnpj;
         this.saldo = saldo;
+        this.senha = senha;
+        this.role = role;
     }
 
     public Integer getId() {
@@ -42,6 +51,22 @@ public class Usuario {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public UserRole getRole() {
+        return role;
+    }
+
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
     public String getNome() {
