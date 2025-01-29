@@ -1,8 +1,8 @@
 package com.entrevista.usuario_api.enums;
 
 public enum UserRole {
-    ADMIN,
-    USER;
+    ADMIN("ADMIN"),
+    USER("USER");
     private String role;
 
     UserRole(String role) {
